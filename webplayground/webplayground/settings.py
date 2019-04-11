@@ -25,7 +25,7 @@ SECRET_KEY = '5v@l9*htdt(yr!dyg6m#6tyl13(*(&-d8t17h*2b7mm2xeh#-n'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -83,8 +83,12 @@ WSGI_APPLICATION = 'webplayground.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'bd_prueba',
+        'USER': 'playground_user',      # Usuario con permisos CRUD unicamente
+        'PASSWORD': '151097',
+        'HOST': 'localhost',   # Or an IP Address that your DB is hosted on
+        'PORT': '3306',
     }
 }
 
